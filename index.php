@@ -2,9 +2,9 @@
     require "header.php";
 ?>
 
-<main>
-    <p>You are logged in!</p>
-    <p>You are logged out!</p>
+<main class="container mt-5">
+    <p>You are logged in now!</p>
+    <p>You are logged out now!</p>
     
 </main>
 
