@@ -40,14 +40,14 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
+                    <input type="password" class="form-control" id="password" name="password">
                 </div>
                 <div class="mb-3">
                     <label for="reenter-password" class="form-label">Re-enter Password</label>
-                    <input type="password" class="form-control" id="reenter-password" name="reenter_password" required>
+                    <input type="password" class="form-control" id="reenter-password" name="reenter_password">
                 </div>
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="submit" name="signup-submit" class="btn btn-primary">Sign Up</button>
                 </div>
             </form>
         </div>
