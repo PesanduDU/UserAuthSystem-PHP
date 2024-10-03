@@ -29,14 +29,37 @@
     <div class="container">
         <div class="signup-form">
             <h2 class="text-center">Sign Up</h2>
+
+            <?php
+
+            if(isset($_GET['error'])){
+                if($_GET['error'] == "emptyfields"){
+                    echo '<br><h3 style="color: red; font-size: 14px; text: center;"> Fill In All Fields!</h3><br>';
+                } elseif($_GET['error'] == "invalidUsernameEmail"){
+                    echo '<br><h3 style="color: red; font-size: 14px; text: center;"> Invalid User Name Or Password!</h3><br>';
+                } elseif ($_GET['error'] == "invalidemail"){
+                    echo '<br><h3 style="color: red; font-size: 14px; text: center;"> Enter Valid Email!</h3><br>';
+                } elseif ($_GET['error'] == "invalidusername"){
+                    echo '<br><h3 style="color: red; font-size: 14px; text: center;"> Enter Valid Username!</h3><br>';
+                } elseif ($_GET['error'] == "passwordmismatch"){
+                    echo '<br><h3 style="color: red; font-size: 14px; text: center;"> Check Password Again!</h3><br>';
+                }
+            } elseif (isset($_GET['signup']) == "success"){
+                echo '<br><h3 style="color: green; font-size: 14px; text: center;"> Successfully Signup!</h3><br>';
+            }
+
+            ?>
+
+
+
             <form action="./includes/signup.inc.php" method="POST">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
+                    <input type="text" class="form-control" id="username" name="username">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
