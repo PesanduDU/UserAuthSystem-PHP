@@ -19,7 +19,7 @@ if (isset($_POST['signup-submit'])) {
         header("Location: ../signup.php?error=invalidemail&username=" . $userName);
         exit();
     } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $userName)) {
-        header("Location: ../signup.php?error=invalidusername&useremail=" . $userEmail);
+        header("Location: ../signup.php?error=invalidusername&email=" . $userEmail);
         exit();
     } elseif ($userPassword !== $userPasswordRepeat) {
         header("Location: ../signup.php?error=passwordmismatch&username=" . $userName . "&email=" . $userEmail);

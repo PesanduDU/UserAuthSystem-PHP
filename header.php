@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,17 +74,34 @@
                     </ul>
 
                     <div class="d-flex">
-                        <form class="d-flex me-2" action="includes/login.inc.php" method="post">
+
+                        <?php
+                        if (isset($_SESSION['userId'])) {
+                            echo '<form action="includes/logout.inc.php" method="post">
+                            <button class="btn btn-danger" type="submit" name="logout-submit">Logout</button>
+                        </form>';
+                        } else {
+                            echo '<form class="d-flex me-2" action="includes/login.inc.php" method="post">
                             <input class="form-control me-2" type="text" name="mailuid" placeholder="Username/E-mail...">
                             <input class="form-control me-2" type="password" name="pwd" placeholder="Password...">
                             <button class="btn btn-primary" type="submit" name="login-submit">Login</button>
                         </form>
 
-                        <a class="btn btn-outline-primary me-2" href="signup.php">Sign Up</a>
+                        <a class="btn btn-outline-primary me-2" href="signup.php">Sign Up</a>';
+                        }
+                        ?>
 
-                        <form action="includes/logout.inc.php" method="post">
-                            <button class="btn btn-danger" type="submit" name="logout-submit">Logout</button>
+                        <!-- <form class="d-flex me-2" action="includes/login.inc.php" method="post">
+                            <input class="form-control me-2" type="text" name="mailuid" placeholder="Username/E-mail...">
+                            <input class="form-control me-2" type="password" name="pwd" placeholder="Password...">
+                            <button class="btn btn-primary" type="submit" name="login-submit">Login</button>
                         </form>
+
+                        <a class="btn btn-outline-primary me-2" href="signup.php">Sign Up</a> -->
+
+                        <!-- <form action="includes/logout.inc.php" method="post">
+                            <button class="btn btn-danger" type="submit" name="logout-submit">Logout</button>
+                        </form> -->
                     </div>
                 </div>
             </div>
